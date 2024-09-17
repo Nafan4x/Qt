@@ -31,8 +31,9 @@ class MainWindow(QMainWindow):
         # GridLayout для кнопок
         row = 12
         col = 2
+
         self.instr = QGridLayout()
-        self.instr.setSpacing(2)
+        self.instr.setSpacing(0)
         self.instr.setContentsMargins(0, 10, 0, 80)
 
         # Устанавливаем размеры и политику размера для кнопок в GridLayout
@@ -43,8 +44,10 @@ class MainWindow(QMainWindow):
                 button.setSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
                 button.clicked.connect(lambda checked, i=f'{row1}{col1}': self.show_message(f'Вы нажали кнопку {i}'))
                 self.instr.addWidget(button, row1, col1)
-        main_layout.addLayout(self.instr)
-
+        self.widget = QWidget()
+        self.widget.setLayout(self.instr)
+        self.widget.setFixedSize(65, 450)  # Размер окна зафиксирован
+        main_layout.addWidget(self.widget)
         # Layout для Canvas и Color Palette
         second_layout = QVBoxLayout()
 
@@ -57,6 +60,8 @@ class MainWindow(QMainWindow):
 
         # Добавляем canvas_frame в second_layout
         second_layout.addWidget(self.canvas_frame)
+
+
 
         # Palette
         self.color_palette = QGridLayout()
@@ -83,8 +88,11 @@ class MainWindow(QMainWindow):
                 row = 1
                 col = 0
 
+        color_widget = QWidget()
+        color_widget.setLayout(self.color_palette)
+        color_widget.setFixedSize(512,80)
         # Добавляем color_palette в second_layout
-        second_layout.addLayout(self.color_palette)
+        second_layout.addWidget(color_widget)
 
         # Добавляем second_layout в основной layout
         main_layout.addLayout(second_layout)
@@ -107,18 +115,6 @@ class MainWindow(QMainWindow):
         # Действие при нажатии на кнопку
         print(message)
 
-    def resizeEvent(self, event):
-        super().resizeEvent(event)
-        # Получаем текущие размеры окна
-        width = self.width()
-        height = self.height()
-        a = int(height/3.5)
-        #b = int(width-290)
-        #print(a, b)
-        self.instr.setContentsMargins(0,10,0,a)
-        self.instr.setContentsMargins(0,0,0,10)
-
-        #print(f"Window resized to width={width}, height={height}")
 
 
 if __name__ == '__main__':
