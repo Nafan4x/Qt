@@ -76,6 +76,44 @@ ApplicationWindow {
                 color: "#4b280a"
                 border.color: "black"
                 border.width: 2
+
+                // Контейнер для изображения
+                Rectangle {
+                    anchors.fill: parent // Заполняет весь родительский прямоугольник
+                    anchors.bottomMargin: 45 // Отступ от нижней грани
+                    anchors.leftMargin: 10
+                    anchors.topMargin: 10
+                    anchors.rightMargin: 10
+                    color: "transparent" // Прозрачный цвет для контейнера
+
+                    Image {
+                        source: "main.png" // Укажите путь к изображению
+                        anchors.fill: parent // Заполняет весь контейнер
+                        fillMode: Image.PreserveAspectCrop // Режим масштабирования изображения
+                    }
+                }
+
+                // Нижний красный прямоугольник
+                Rectangle {
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.bottom: parent.bottom
+                    height: 10 // Устанавливаем высоту на 10 пикселей
+                    color: "red"
+                    anchors.bottomMargin: 25 // Отступ от нижней грани
+                    anchors.leftMargin: 10
+                    anchors.rightMargin: 10
+                }
+
+                // Нижний синий прямоугольник
+                Rectangle {
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.bottom: parent.bottom
+                    height: 10 // Устанавливаем высоту на 10 пикселей
+                    color: "blue"
+                    anchors.margins: 10 // Отступы вокруг этого прямоугольника
+                }
             }
             Rectangle {
                 Layout.preferredWidth: 200

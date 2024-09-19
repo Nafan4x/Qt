@@ -1,6 +1,6 @@
 import sys
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QPixmap
+from PyQt6.QtGui import QPixmap, QIcon
 from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QHBoxLayout, QWidget, QLabel, QPushButton, \
     QGridLayout, QFrame, QSizePolicy
 
@@ -34,14 +34,15 @@ class MainWindow(QMainWindow):
 
         self.instr = QGridLayout()
         self.instr.setSpacing(0)
-        self.instr.setContentsMargins(0, 10, 0, 80)
+        self.instr.setContentsMargins(0, 0, 0, 100)
 
         # Устанавливаем размеры и политику размера для кнопок в GridLayout
         for row1 in range(row):
             for col1 in range(col):
-                button = QPushButton(f'{row1}{col1}')
+                button = QPushButton()
                 button.setFixedSize(30, 30)
                 button.setSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+                button.setIcon(QIcon('1860115.png'))
                 button.clicked.connect(lambda checked, i=f'{row1}{col1}': self.show_message(f'Вы нажали кнопку {i}'))
                 self.instr.addWidget(button, row1, col1)
         self.widget = QWidget()
@@ -55,9 +56,11 @@ class MainWindow(QMainWindow):
         self.canvas_frame = QLabel(self)
         self.canvas_frame.setFrameShape(QFrame.Shape.Box)
         self.canvas_frame.setLineWidth(2)
-        self.set_image("/mnt/data/image.png")
+
         self.canvas_frame.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
 
+        # Устанавливаем размеры
+        self.canvas_frame.setMinimumSize(600, 400)
         # Добавляем canvas_frame в second_layout
         second_layout.addWidget(self.canvas_frame)
 
@@ -98,9 +101,16 @@ class MainWindow(QMainWindow):
         main_layout.addLayout(second_layout)
 
     def set_image(self, image_path):
+        """Устанавливает изображение и масштабирует его под размер canvas_frame."""
         pixmap = QPixmap(image_path)
-        self.canvas_frame.setPixmap(pixmap.scaled(600, 400, Qt.AspectRatioMode.KeepAspectRatio))
-        self.update_layout_margins(pixmap.size())
+        # Масштабируем изображение
+        self.canvas_frame.setPixmap(pixmap.scaled(self.canvas_frame.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
+
+    def resizeEvent(self, event):
+        """Обрабатываем событие изменения размера."""
+        if self.canvas_frame.pixmap():  # Проверяем, есть ли загруженное изображение
+            self.canvas_frame.setPixmap(self.canvas_frame.pixmap().scaled(self.canvas_frame.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
+
 
     def update_layout_margins(self, image_size):
         width, height = image_size.width(), image_size.height()
@@ -114,6 +124,7 @@ class MainWindow(QMainWindow):
     def show_message(self, message):
         # Действие при нажатии на кнопку
         print(message)
+
 
 
 
