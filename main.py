@@ -34,7 +34,7 @@ class MainWindow(QMainWindow):
 
         self.instr = QGridLayout()
         self.instr.setSpacing(0)
-        self.instr.setContentsMargins(0, 0, 0, 100)
+        #self.instr.setContentsMargins(0, 0, 0, 100)
 
         # Устанавливаем размеры и политику размера для кнопок в GridLayout
         for row1 in range(row):
@@ -45,10 +45,27 @@ class MainWindow(QMainWindow):
                 button.setIcon(QIcon('1860115.png'))
                 button.clicked.connect(lambda checked, i=f'{row1}{col1}': self.show_message(f'Вы нажали кнопку {i}'))
                 self.instr.addWidget(button, row1, col1)
+
         self.widget = QWidget()
         self.widget.setLayout(self.instr)
-        self.widget.setFixedSize(65, 450)  # Размер окна зафиксирован
-        main_layout.addWidget(self.widget)
+        self.widget.setFixedSize(80, 450)  # Размер окна зафиксирован
+
+        tool_layout = QVBoxLayout()
+        tool_layout.addWidget(self.widget)
+        jb = QPushButton()
+        jb.setFixedSize(80,50)
+        jb.setStyleSheet(f"background-color: white; border: 1px solid black;")
+        jb.clicked.connect(lambda checked, i=f'White': self.show_message(f'Вы нажали кнопку {i}'))
+        jb1 = QPushButton()
+        jb1.setFixedSize(80, 50)
+        jb1.setStyleSheet(f"background-color: black; border: 1px solid black;")
+        jb1.clicked.connect(lambda checked, i=f'Black': self.show_message(f'Вы нажали кнопку {i}'))
+
+        tool_layout.addWidget(jb)
+        tool_layout.addWidget(jb1)
+        tool_widget = QWidget()
+        tool_widget.setLayout(tool_layout)
+        main_layout.addWidget(tool_widget)
         # Layout для Canvas и Color Palette
         second_layout = QVBoxLayout()
 
@@ -124,6 +141,7 @@ class MainWindow(QMainWindow):
     def show_message(self, message):
         # Действие при нажатии на кнопку
         print(message)
+
 
 
 

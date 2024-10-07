@@ -31,7 +31,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -43,7 +43,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -55,7 +55,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -67,7 +67,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -79,7 +79,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -91,7 +91,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -103,7 +103,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -115,7 +115,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -127,7 +127,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -139,7 +139,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -151,7 +151,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -163,7 +163,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -175,7 +175,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -187,7 +187,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -199,7 +199,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -211,7 +211,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normalon>:/pen/1860115.png</normalon>
+         <normalon>1860115.png</normalon>
         </iconset>
        </property>
       </widget>
@@ -473,11 +473,6 @@
        <property name="text">
         <string/>
        </property>
-       <property name="icon">
-        <iconset>
-         <normalon>:/pen/C:/Users/Tim35/OneDrive/Изображения/1860115.png</normalon>
-        </iconset>
-       </property>
       </widget>
      </item>
      <item row="0" column="7">
@@ -564,7 +559,7 @@
      <x>0</x>
      <y>0</y>
      <width>657</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
    <property name="nativeMenuBar">
