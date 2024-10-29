@@ -1,0 +1,11 @@
+{
+    "name": "321",
+    "components": {
+        "CPU": "Intel i5 - $200",
+        "GPU": "AMD RX 580 - $250",
+        "RAM": "8GB DDR4 - $50",
+        "Storage": "512GB SSD - $60",
+        "PSU": "650W - $60"
+    },
+    "total_price": 620
+}

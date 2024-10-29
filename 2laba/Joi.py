@@ -17,8 +17,8 @@ class JoystickWidget(QWidget):
         self.joystick_radius = 15  # Радиус перемещаемого кружка
 
         # Создаем QLabel для отображения состояния кнопок
-        self.label_a = QLabel("Button A", self)
-        self.label_b = QLabel("Button B", self)
+        self.label_a = QLabel("A", self)
+        self.label_b = QLabel("B", self)
         self.label_a.setFixedSize(80, 30)
         self.label_b.setFixedSize(80, 30)
 

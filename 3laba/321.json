@@ -1,0 +1,9 @@
+{
+    "categories": {
+        "CPU": [{"name": "Intel i5", "price": 200}, {"name": "AMD Ryzen 5", "price": 180}],
+        "GPU": [{"name": "NVIDIA GTX 1660", "price": 300}, {"name": "AMD RX 580", "price": 250}],
+        "RAM": [{"name": "8GB DDR4", "price": 50}, {"name": "16GB DDR4", "price": 90}],
+        "Storage": [{"name": "1TB HDD", "price": 40}, {"name": "512GB SSD", "price": 60}],
+        "PSU": [{"name": "500W", "price": 40}, {"name": "650W", "price": 60}]
+    }
+}

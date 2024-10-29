@@ -1,5 +1,6 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget
+from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QLineEdit
+
 from Joi import JoystickWidget
 
 class MainWindow(QMainWindow):
@@ -12,9 +13,17 @@ class MainWindow(QMainWindow):
         # Создаем наш кастомный виджет джойстика
         self.joystick = JoystickWidget(self)
 
+        # Создаем два инпута
+        input1 = QLineEdit()
+        input1.setPlaceholderText("Угол")  # Подсказка для пользователя
+        input2 = QLineEdit()
+        input2.setPlaceholderText("Радиус")
+        # Добавляем виджеты на layout
+
         # Кнопка для установки случайного положения джойстика
         self.set_position_button = QPushButton("Set Joystick Position", self)
-        self.set_position_button.clicked.connect(self.set_random_position)
+        self.set_position_button.clicked.connect(lambda: self.joystick.set_joystick_position(int(input1.text()),int(input2.text()), True, False))
+        self.set_position_button.clicked.connect(lambda: print(input1.text()))
 
         # Кнопка для сброса джойстика
         self.reset_button = QPushButton("Reset Joystick", self)
@@ -25,6 +34,13 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.joystick)
         layout.addWidget(self.set_position_button)
         layout.addWidget(self.reset_button)
+
+
+        layout.addWidget(input1)
+
+
+        layout.addWidget(input2)
+
 
         container = QWidget()
         container.setLayout(layout)
